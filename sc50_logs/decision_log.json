@@ -1,0 +1,3 @@
+{"event": "override", "new": 112, "original": 98, "product": "Milk"}
+{"event": "override", "new": 100, "original": 89, "product": "Milk"}
+{"event": "approved", "qty": 100, "product": "Milk"}
