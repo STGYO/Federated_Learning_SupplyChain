@@ -380,9 +380,9 @@ with main_col:
     # ── Model Loading ──
     if not st.session_state.model:
         st.markdown("### 🚀 Initialize AI Engine")
-        st.markdown("Load the TinyLlama model and launch the federated core.")
+        st.markdown("Load the fine-tuned Qwen model and launch the federated core.")
         if st.button("⚡ Boot System"):
-            with st.spinner("Loading TinyLlama & Federated Core..."):
+            with st.spinner("Loading Qwen 0.5B & Federated Core..."):
                 try:
                     tokenizer, model = load_model()
                     st.session_state.tokenizer = tokenizer
@@ -522,7 +522,7 @@ with main_col:
                 # AI Insight
                 st.markdown("#### 🤖 AI Strategic Insight")
                 if st.button("✨ Generate Explanation"):
-                    with st.spinner("Consulting TinyLlama..."):
+                    with st.spinner("Consulting Fine-Tuned AI..."):
                         system_msg = {
                             "role": "system", 
                             "content": f"You are a supply chain expert. Product: {SCConfig.PRODUCT_NAME}. Forecast: {forecast}. Emissions: {opt['emissions']:.2f}."

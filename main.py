@@ -23,9 +23,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 
 
-@dataclass
 class SCConfig:
-    MODEL_NAME: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    # ── Option B: Local Mode ──
+    # Pointing directly to the folder you downloaded from Google Drive!
+    MODEL_NAME: str = "./SupplyChain_Qwen"
     PRODUCT_NAME: str = "Milk"  # Fixed Product
     NUM_CLIENTS: int = 3
     NUM_ROUNDS: int = 2
@@ -82,7 +83,7 @@ def get_device():
 
 def load_model():
     device = get_device()
-    log(f"Loading TinyLlama 1.1B on {device}...")
+    log(f"Loading Local Fine-Tuned Qwen2.5-0.5B-Instruct on {device} (Ultra-Fast Native Mode)...")
 
     if device == "cuda":
         bnb_config = BitsAndBytesConfig(
@@ -96,8 +97,7 @@ def load_model():
             device_map="auto"
         )
     else:
-        # CPU or MPS (Apple Silicon) - 4-bit quantization usually requires CUDA
-        # We load in float32 (default) or float16 if supported to save memory
+        # CPU or MPS (Apple Silicon)
         torch_dtype = torch.float32 
         if device == "mps":
              torch_dtype = torch.float16

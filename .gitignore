@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# Local Data and Logs
+sc50_logs/
+
+# Huge AI Models & Datasets (DO NOT PUSH)
+SupplyChain_Qwen/
+qwen_supply_chain_*/
+*.jsonl
+*.safetensors
+*.gguf
+*.bin
