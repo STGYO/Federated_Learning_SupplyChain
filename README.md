@@ -77,7 +77,7 @@ Your browser will launch the UI. Click **Boot System** to load the local Qwen mo
 ```text
 ├── .gitignore                         # Prevents huge weights from bottlenecking Git
 ├── DATASETS/                          # Raw CSV supply chains for the 3 clients
-├── sc50_logs/                         # Auto-generated JSON decision logs from the LLM
+├── sc50_logs/                         # Auto-generated JSONL/NDJSON decision logs from the LLM
 ├── app.py                             # Primary interactive Streamlit front-end
 ├── main.py                            # Backend configuration and federated logic
 ├── analyze_data.py                    # Legacy data validator
