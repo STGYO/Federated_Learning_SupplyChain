@@ -94,7 +94,7 @@ else:
         print(f"   Checked: {DATASET_FILE}")
         print(f"   Checked: {alt_path}")
         raise FileNotFoundError(
-            "Dataset file not found at either /content or DRIVE_MASTER_PATH. "
+            f"Dataset file not found. Checked: {DATASET_FILE} and {alt_path}. "
             "Upload milk_supply_chain_qwen.jsonl before continuing."
         )
 
